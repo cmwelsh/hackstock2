@@ -1,0 +1,17 @@
+{
+  "name": "hackstock2",
+  "version": "0.0.1",
+  "description": "Hackstock for #LocalGov 2",
+  "scripts": {
+    "start": "./node_modules/.bin/nf start server"
+  },
+  "dependencies": {
+    "express": "~4.8.7",
+    "foreman": "^0.4.2",
+    "requirefrom": "~0.2.0",
+    "winston": "^0.7.3"
+  },
+  "devDependencies": {},
+  "engine": "node >= 0.10.30",
+  "private": true
+}
