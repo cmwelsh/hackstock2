@@ -1,10 +1,15 @@
 require([
+    'jquery',
     'src/application'
 ], function(
+    $,
     Application
 ) {
     'use strict';
 
-    var application = new Application();
-    application.run();
+    setTimeout(function() {
+        $('#loading-bar').hide();
+        var application = new Application();
+        application.run();
+    }, 2000);
 });

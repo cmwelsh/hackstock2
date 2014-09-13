@@ -10,9 +10,15 @@ body {
     font-size: 16px;
 }
 
+#loading-bar {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 40%;
+}
+
 .constrainedLayout {
     margin: 0 auto;
-    max-width: 600px;
 
     padding: 0 1rem;
 }
