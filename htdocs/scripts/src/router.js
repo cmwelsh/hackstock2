@@ -26,6 +26,10 @@ define(function(require) {
         this.directorRouter.init();
     };
 
+    Router.prototype.setRoute = function(options) {
+        this.directorRouter.setRoute(options.path);
+    };
+
     Router.prototype.setView = function(View, options) {
         if (this.view) {
             this.view.dispose();
@@ -34,6 +38,7 @@ define(function(require) {
         this.view = new View(options);
         this.view.initialize();
         this.view.render();
+        this.view.on('route', this.setRoute.bind(this));
     };
 
     Router.prototype.home = function() {
