@@ -16,9 +16,13 @@ var Application = function(options) {
 
     this.app.get('/', routes.home);
     this.app.get('/police', routes.home);
+    this.app.get('/police/*', routes.home);
     this.app.get('/fire', routes.home);
+    this.app.get('/fire/*', routes.home);
     this.app.get('/ambulance', routes.home);
+    this.app.get('/ambulance/*', routes.home);
     this.app.get('/community', routes.home);
+    this.app.get('/community/*', routes.home);
 };
 
 Application.prototype.run = function() {

@@ -1,19 +1,42 @@
-<div class="siteContainer_home">
-    <h1>Say Something</h1>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Say Something!</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Police</a></li>
+        <li><a href="#">Fire</a></li>
+        <li><a href="#">Ambulance</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="siteContainer_home constrainedLayout">
+    <p>
+        Select the type of services needed.
+    </p>
 
     <button type="button" class="btn btn-lg btn-primary js-type" data-type="police">
+        <i class="fa fa-fw fa-lg fa-gavel"></i>
         Police
     </button>
 
     <button type="button" class="btn btn-lg btn-danger js-type" data-type="fire">
+        <i class="fa fa-fw fa-lg fa-fire-extinguisher"></i>
         Fire
     </button>
 
     <button type="button" class="btn btn-lg btn-info js-type" data-type="ambulance">
+        <i class="fa fa-fw fa-lg fa-ambulance"></i>
         Ambulance
     </button>
 
     <button type="button" class="btn btn-lg btn-success js-type" data-type="community">
+        <i class="fa fa-fw fa-lg fa-smile-o"></i>
         Community
     </button>
 </div>
