@@ -25,7 +25,9 @@ define(function(require) {
     MapView.prototype.render = function() {
         BaseView.prototype.render.apply(this, arguments);
 
-        this.esriMap = L.map('map').setView([35.221646, -80.845350], 13);
+        this.esriMap = L.map('map');
+        this.esriMap.setView([35.221646, -80.845350], 13);
+
         L.esri.basemapLayer('Streets', {detectRetina: true}).addTo(this.esriMap);
         this.esriMap.locate({setView: true, maxZoom: 16});
 
