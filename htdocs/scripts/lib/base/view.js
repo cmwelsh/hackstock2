@@ -1,12 +1,16 @@
 define(function(require) {
     'use strict';
 
+    var EventEmitter2 = require('eventemitter2');
     var $ = require('jquery');
 
     var BaseView = function(options) {
+        EventEmitter2.call(this);
         this.attributes = options;
         this.$el = $(options.$el);
     };
+
+    _.extend(BaseView.prototype, EventEmitter2.prototype);
 
     BaseView.prototype.initialize = function() {
     };

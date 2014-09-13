@@ -22,10 +22,6 @@ define(function(require) {
         $('#test').text('Hello world!');
         log.info(_.extend({}, {}));
         log.info(moment().format());
-
-        var esriMap = L.map('map').setView([35.221646, -80.845350], 13);
-        L.esri.basemapLayer('Streets', {detectRetina: true}).addTo(esriMap);
-        esriMap.locate({setView: true, maxZoom: 16});
         */
     };
 

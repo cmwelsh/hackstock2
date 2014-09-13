@@ -9,8 +9,10 @@
     "underscore": "~1.7.0",
     "loglevel": "~1.1.0",
     "esri-leaflet": "http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet.js",
-    "leaflet": "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js",
+    "leaflet": "~0.7.3",
     "director": "~1.2.2",
-    "require-handlebars-plugin": "~0.8.1"
+    "require-handlebars-plugin": "~0.8.1",
+    "eventemitter2": "~0.4.14",
+    "esri-leaflet-geocoder": "http://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"
   }
 }
