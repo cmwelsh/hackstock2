@@ -1,0 +1,16 @@
+{
+  "name": "hackstock2",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "jquery": "~2.1.1",
+    "moment": "~2.8.2",
+    "requirejs": "~2.1.14",
+    "underscore": "~1.7.0",
+    "loglevel": "~1.1.0",
+    "esri-leaflet": "http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet.js",
+    "leaflet": "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js",
+    "director": "~1.2.2",
+    "require-handlebars-plugin": "~0.8.1"
+  }
+}
