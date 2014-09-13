@@ -3,6 +3,7 @@ define(function(require) {
 
     var EventEmitter2 = require('eventemitter2');
     var $ = require('jquery');
+    var _ = require('underscore');
 
     var BaseView = function(options) {
         EventEmitter2.call(this);

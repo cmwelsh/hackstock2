@@ -5,8 +5,10 @@ define(function(require) {
     var L = require('leaflet');
     require('esri-leaflet-geocoder');
 
+    var log = require('lib/logger');
     var BaseView = require('lib/base/view');
     var template = require('hbs!templates/map');
+    var popupTemplate = require('hbs!templates/map/popup');
 
     var MapView = function() {
         BaseView.apply(this, arguments);
@@ -40,7 +42,25 @@ define(function(require) {
             throw new Error(error);
         }
 
-        L.marker(result.latlng).addTo(this.esriMap).bindPopup(result.address).openPopup();
+        log.info(result);
+
+        var popupHtml = popupTemplate(result);
+
+        L.marker(result.latlng)
+        .addTo(this.esriMap)
+        .bindPopup(popupHtml)
+        .openPopup();
+
+        this.$el.find('.js-input').val(this.formatAddress(result));
+    };
+
+    MapView.prototype.formatAddress = function(result) {
+        var address = '';
+        address += result.address + ', ';
+        address += result.city + ', ';
+        address += result.region + ' ';
+        address += result.postal;
+        return address;
     };
 
     return MapView;
