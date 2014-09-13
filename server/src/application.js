@@ -5,6 +5,7 @@ var http = require('http');
 var requireFrom = require('requirefrom');
 
 var log = requireFrom('server/lib/')('logger');
+var routes = requireFrom('server/src/')('routes');
 
 var Application = function(options) {
     this.app = express();
@@ -12,6 +13,9 @@ var Application = function(options) {
     // Use static middleware
     this.app.use(express.static(__dirname + '/../../htdocs'));
     this.app.use('/components', express.static(__dirname + '/../../bower_components'));
+
+    this.app.get('/', routes.home);
+    this.app.get('/map', routes.home);
 };
 
 Application.prototype.run = function() {
