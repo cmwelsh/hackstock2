@@ -18,12 +18,12 @@ define(function(require) {
 
     HomeView.prototype.initialize = function() {
         BaseView.prototype.initialize.apply(this, arguments);
+
+        this.$el.on('click', '.js-type', this.typeSelected.bind(this));
     };
 
     HomeView.prototype.render = function() {
         BaseView.prototype.render.apply(this, arguments);
-
-        this.$el.find('.js-type').on('click', this.typeSelected.bind(this));
     };
 
     HomeView.prototype.typeSelected = function(event) {
