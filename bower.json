@@ -10,6 +10,7 @@
     "loglevel": "~1.1.0",
     "esri-leaflet": "http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet.js",
     "leaflet": "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js",
-    "director": "~1.2.2"
+    "director": "~1.2.2",
+    "require-handlebars-plugin": "~0.8.1"
   }
 }

@@ -15,7 +15,10 @@ var Application = function(options) {
     this.app.use('/components', express.static(__dirname + '/../../bower_components'));
 
     this.app.get('/', routes.home);
-    this.app.get('/map', routes.home);
+    this.app.get('/police', routes.home);
+    this.app.get('/fire', routes.home);
+    this.app.get('/ambulance', routes.home);
+    this.app.get('/community', routes.home);
 };
 
 Application.prototype.run = function() {
