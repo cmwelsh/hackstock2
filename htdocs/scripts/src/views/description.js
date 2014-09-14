@@ -1,6 +1,7 @@
 define(function(require) {
     'use strict';
 
+    var $ = require('jquery');
     var _ = require('underscore');
 
     var BaseView = require('lib/base/view');
@@ -17,7 +18,8 @@ define(function(require) {
     DescriptionView.prototype.initialize = function() {
         BaseView.prototype.initialize.apply(this, arguments);
 
-        this.$el.on('click', '.js-go-back', this.goBack.bind(this));
+        this.$el.off().on('click', '.js-go-back', this.goBack.bind(this));
+        this.$el.on('click', '.js-submit-description', this.submit.bind(this));
     };
 
     DescriptionView.prototype.render = function() {
@@ -45,8 +47,30 @@ define(function(require) {
 
     DescriptionView.prototype.goBack = function() {
         this.emit('route', {
-            path: '/police'
+            path: '/'
         });
+    };
+
+    DescriptionView.prototype.submit = function(event) {
+        var typeMap = {
+            police: 'Police',
+            fire: 'Fire Department',
+            ambulance: 'Ambulance Services',
+            community: 'Community Outreach'
+        };
+        var formattedType = typeMap[this.attributes.type];
+        $.ajax({
+          data: {
+            type: formattedType,
+            address: this.attributes.fullAddress,
+            description: $('#description-form').val()
+          },
+          type: 'post',
+          url: '/api/messages'
+        }).then(function() {
+            window.alert('You have successfully requested help for this location.');
+        })
+        .then(this.goBack.bind(this));
     };
 
     return DescriptionView;

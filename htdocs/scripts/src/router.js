@@ -2,8 +2,8 @@ define(function(require) {
     'use strict';
 
     var DirectorRouter = require('director');
+    var $ = require('jquery');
 
-    var log = require('lib/logger');
     var DescriptionView = require('src/views/description');
     var HomeView = require('src/views/home');
     var MapView = require('src/views/map');
@@ -27,6 +27,14 @@ define(function(require) {
 
     Router.prototype.initialize = function() {
         this.directorRouter.init();
+
+        var _this = this;
+
+        $(document).on('click', 'a', function(event) {
+            event.preventDefault();
+            var $item = $(event.currentTarget);
+            _this.setRoute({path: $item.attr('href')});
+        });
     };
 
     Router.prototype.setRoute = function(options) {

@@ -21,7 +21,7 @@ define(function(require) {
     MapView.prototype.initialize = function() {
         BaseView.prototype.initialize.apply(this, arguments);
 
-        this.$el.on('click', '.js-select-location', this.locationSelected.bind(this));
+        this.$el.off().on('click', '.js-select-location', this.locationSelected.bind(this));
         this.$el.on('click', '.js-go-back', this.emit.bind(this, 'route', {path: '/'}));
     };
 
@@ -83,7 +83,7 @@ define(function(require) {
 
     MapView.prototype.locationSelected = function(event) {
         this.emit('route', {
-            path: '/police/' + encodeURIComponent(this.formatAddress(this.result))
+            path: '/' + this.attributes.type + '/' + encodeURIComponent(this.formatAddress(this.result))
         });
     };
 

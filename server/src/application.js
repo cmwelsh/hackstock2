@@ -1,5 +1,6 @@
 'use strict';
 
+var bodyParser = require('body-parser');
 var express = require('express');
 var http = require('http');
 var requireFrom = require('requirefrom');
@@ -9,6 +10,8 @@ var routes = requireFrom('server/src/')('routes');
 
 var Application = function(options) {
     this.app = express();
+
+    this.app.use(bodyParser.urlencoded({ extended: false }));
 
     // Use static middleware
     this.app.use(express.static(__dirname + '/../../htdocs'));
@@ -23,6 +26,8 @@ var Application = function(options) {
     this.app.get('/ambulance/*', routes.home);
     this.app.get('/community', routes.home);
     this.app.get('/community/*', routes.home);
+
+    this.app.post('/api/messages', routes.messages);
 };
 
 Application.prototype.run = function() {
