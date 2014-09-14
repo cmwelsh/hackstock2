@@ -83,7 +83,7 @@ define(function(require) {
 
     MapView.prototype.locationSelected = function(event) {
         this.emit('route', {
-            path: '/police/' + encodeURIComponent(this.formatAddress(this.result))
+            path: '/' + this.attributes.type + '/' + encodeURIComponent(this.formatAddress(this.result))
         });
     };
 
