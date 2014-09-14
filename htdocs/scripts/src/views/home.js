@@ -19,7 +19,7 @@ define(function(require) {
     HomeView.prototype.initialize = function() {
         BaseView.prototype.initialize.apply(this, arguments);
 
-        this.$el.on('click', '.js-type', this.typeSelected.bind(this));
+        this.$el.off().on('click', '.js-type', this.typeSelected.bind(this));
     };
 
     HomeView.prototype.render = function() {

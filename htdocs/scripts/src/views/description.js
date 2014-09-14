@@ -18,7 +18,7 @@ define(function(require) {
     DescriptionView.prototype.initialize = function() {
         BaseView.prototype.initialize.apply(this, arguments);
 
-        this.$el.on('click', '.js-go-back', this.goBack.bind(this));
+        this.$el.off().on('click', '.js-go-back', this.goBack.bind(this));
         this.$el.on('click', '.js-submit-description', this.submit.bind(this));
     };
 
@@ -60,12 +60,11 @@ define(function(require) {
         };
         var formattedType = typeMap[this.attributes.type];
         $.ajax({
-          data: JSON.stringify({
+          data: {
             type: formattedType,
             address: this.attributes.fullAddress,
             description: $('#description-form').val()
-          }),
-          processData: false,
+          },
           type: 'post',
           url: '/api/messages'
         }).then(function() {

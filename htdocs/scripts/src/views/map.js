@@ -21,7 +21,7 @@ define(function(require) {
     MapView.prototype.initialize = function() {
         BaseView.prototype.initialize.apply(this, arguments);
 
-        this.$el.on('click', '.js-select-location', this.locationSelected.bind(this));
+        this.$el.off().on('click', '.js-select-location', this.locationSelected.bind(this));
         this.$el.on('click', '.js-go-back', this.emit.bind(this, 'route', {path: '/'}));
     };
 

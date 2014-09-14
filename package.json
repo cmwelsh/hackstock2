@@ -6,9 +6,11 @@
     "start": "./node_modules/.bin/nf start server"
   },
   "dependencies": {
+    "body-parser": "^1.8.1",
     "express": "~4.8.7",
     "foreman": "^0.4.2",
     "requirefrom": "~0.2.0",
+    "twilio": "^1.7.0",
     "winston": "^0.7.3"
   },
   "devDependencies": {},
